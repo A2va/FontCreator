@@ -1,0 +1,49 @@
+
+?headerSize=6;			needed for calculating the font size in bytes
+?widthTable=true;
+
+/*
+ *
+ * %fontName
+ *
+ * created with FontCreator
+ * written by F. Maximilian Thiele
+ *
+ 
+ * File Name           : %fileName
+ * Date                : %date
+ * Font size in bytes  : %size
+ * Font width          : %width
+ * Font height         : %height
+ * Font first char     : %firstChar
+ * Font last char      : %lastChar
+ * Font used chars     : %charCount
+ *
+ * The font data are defined as
+ *
+ */
+
+#include <inttypes.h>
+#include <avr/pgmspace.h>
+
+#ifndef %defName_H
+#define %defName_H
+
+#define %defName_WIDTH %width
+#define %defName_HEIGHT %height
+
+unsigned char %name[] = {
+    %binSize, // size
+    %binWidth, // width
+    %binHeight, // height
+    %binFirstChar, // first char
+    %binCharCount, // char count
+    
+    // char widths
+    %fontWidthData
+    
+    // font data
+    %fontData
+};
+
+#endif
