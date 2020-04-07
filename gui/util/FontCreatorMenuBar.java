@@ -103,6 +103,14 @@ public class FontCreatorMenuBar extends JMenuBar implements ActionListener {
 		
 		add(edit);
 
+		JMenu about = new JMenu("About");
+		JMenuItem aboutW = new JMenuItem("About Font Creator");
+		aboutW.setActionCommand("about");
+		aboutW.addActionListener(this);
+		about.add(aboutW);
+
+		add(about);
+
 	}
 
 	/* (non-Javadoc)
@@ -118,6 +126,8 @@ public class FontCreatorMenuBar extends JMenuBar implements ActionListener {
 			gui.saveFont();
 		} else if(cmd.equals("exit")) {
 			System.exit(0);
+		} else if(cmd.equals("about")) {
+			gui.aboutGui();
 		} else if(cmd.equals("export")) {
 			gui.exportFont();
 		} else if(cmd.equals("fontSettings")) {

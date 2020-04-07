@@ -9,7 +9,6 @@ package gui;
 import gui.util.FontCreatorMenuBar;
 import gui.util.FontCreatorSideToolBar;
 import gui.util.FontCreatorTopToolBar;
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -20,13 +19,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import javax.swing.JDesktopPane;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
-import javax.swing.JTextField;
-
+import java.awt.Desktop;
+import javax.swing.*;
+import javax.swing.event.*;
 import util.Font;
 import util.FontExport;
 import util.SerializableFont;
@@ -149,6 +144,48 @@ public class MainWindow extends JFrame {
 		/*
 		 * Not yet implemented
 		 */
+	}
+
+	public void aboutGui() {
+
+		String html;
+
+		html = "<html><body width='%1s'><h1>Font Creator</h1>"
+				+ "<p>This tool allows you to generate header files<br>"
+				+ "to display fonts on LCD.<br><br>"
+				+ "Original Author:Fabian Maximilian Thiele<br>"
+				+ "Modification:A2va<br>"
+				+ "<a href=\"https://github.com/A2va/FontCreator\">GitHub Link</a>";
+
+		JEditorPane jep = new JEditorPane();
+		jep.setContentType("text/html");//set content as html
+		jep.setText(html);
+		jep.setEditable(false);//so its not editable
+		jep.setOpaque(false);//so we dont see whit background
+
+		jep.addHyperlinkListener(new HyperlinkListener() {
+			@Override
+			public void hyperlinkUpdate(HyperlinkEvent hle) {
+				if (HyperlinkEvent.EventType.ACTIVATED.equals(hle.getEventType())) {
+					Desktop desktop = Desktop.getDesktop();
+					try {
+						desktop.browse(hle.getURL().toURI());
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
+				}
+			}
+		});
+
+
+		JFrame frame = new JFrame("About");
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.add(jep);
+		frame.pack();
+		frame.setVisible(true);
+
 	}
 	
 	public void selectedEditorChanged(CharEditor selectedEditor) {

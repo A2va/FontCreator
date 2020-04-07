@@ -7,7 +7,6 @@
 package util;
 
 import gui.MainWindow;
-
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.io.BufferedReader;
