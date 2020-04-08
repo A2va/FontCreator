@@ -22,6 +22,8 @@ import java.io.ObjectOutputStream;
 import java.awt.Desktop;
 import javax.swing.*;
 import javax.swing.event.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import util.Font;
 import util.FontExport;
 import util.SerializableFont;
@@ -94,14 +96,28 @@ public class MainWindow extends JFrame {
 		if(desktop.getSelectedFrame() instanceof FontEditor) {
 			FontEditor editor = (FontEditor)desktop.getSelectedFrame();
 			JFileChooser chooser = new JFileChooser(".");
+			FileNameExtensionFilter filter = new FileNameExtensionFilter("Font files", "font");
+			chooser.setFileFilter(filter);
 			int rv = chooser.showSaveDialog(this);
 			if(rv == JFileChooser.APPROVE_OPTION) {
 				File dest = chooser.getSelectedFile();
+				String fileName=dest.getName();
+				boolean b_fileRename=false;
+				if(!(fileName.contains(".font")))
+				{
+					fileName= fileName.concat(".font");
+					b_fileRename=true;
+				}
 				try {
 					ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(dest));
 					SerializableFont font = new SerializableFont(editor.getEditedFont());
 					out.writeObject(font);
 					out.close();
+					if (b_fileRename=true)
+					{
+						File  fileRename = new File(fileName);
+						dest.renameTo(fileRename);
+					}
 				} catch (IOException e) {
 					System.err.println("IOException: "+e.toString());
 				}
@@ -111,6 +127,8 @@ public class MainWindow extends JFrame {
 
 	public void loadFont() {
 		JFileChooser chooser = new JFileChooser(".");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Font files", "font");
+		chooser.setFileFilter(filter);
 		int rv = chooser.showOpenDialog(this);
 		if(rv == JFileChooser.APPROVE_OPTION) {
 			File dest = chooser.getSelectedFile();
@@ -155,7 +173,7 @@ public class MainWindow extends JFrame {
 				+ "to display fonts on LCD.<br><br>"
 				+ "Original Author:Fabian Maximilian Thiele<br>"
 				+ "Modification:A2va<br>"
-				+ "<a href=\"https://github.com/A2va/FontCreator\">GitHub Link</a>";
+				+ "<a href=\"https://github.com/A2va/FontCreator\">GitHub Repository</a>";
 
 		JEditorPane jep = new JEditorPane();
 		jep.setContentType("text/html");//set content as html
