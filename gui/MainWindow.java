@@ -9,21 +9,20 @@ package gui;
 import gui.util.FontCreatorMenuBar;
 import gui.util.FontCreatorSideToolBar;
 import gui.util.FontCreatorTopToolBar;
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+import java.awt.color.*;
 import util.Font;
 import util.FontExport;
 import util.SerializableFont;
@@ -69,7 +68,7 @@ public class MainWindow extends JFrame {
 	}
 	
 	private void initFrame() {
-		setTitle("FontCreator ");
+		setTitle("FontCreator");
 		setSize(800, 600);
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(d.width/2-getWidth()/2, d.height/2-getHeight()/2);
@@ -171,8 +170,8 @@ public class MainWindow extends JFrame {
 		html = "<html><body width='%1s'><h1>Font Creator</h1>"
 				+ "<p>This tool allows you to generate header files<br>"
 				+ "to display fonts on LCD.<br><br>"
-				+ "Original Author:Fabian Maximilian Thiele<br>"
-				+ "Modification:A2va<br>"
+				+ "Original Author: Fabian Maximilian Thiele<br>"
+				+ "Modification: A2va<br>"
 				+ "<a href=\"https://github.com/A2va/FontCreator\">GitHub Repository</a>";
 
 		JEditorPane jep = new JEditorPane();
@@ -203,7 +202,6 @@ public class MainWindow extends JFrame {
 		frame.add(jep);
 		frame.pack();
 		frame.setVisible(true);
-
 	}
 	
 	public void selectedEditorChanged(CharEditor selectedEditor) {

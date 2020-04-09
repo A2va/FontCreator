@@ -59,10 +59,10 @@ public class NewFontDialog extends JDialog implements ActionListener, ChangeList
 	
 
 	private String[] colorChoices = {
-		"2 Colors (1 Bit per Pixel)",
-		"4 Colors (2 Bit per Pixel)",
-		"8 Colors (3 Bit per Pixel)",
-		"256 Colors (8 Bit fixed)"
+		"2 Colors (1 Bit per Pixel)"
+		//"4 Colors (2 Bit per Pixel)",
+		//"8 Colors (3 Bit per Pixel)",
+		//"256 Colors (8 Bit fixed)"
 	};
 	
 	public NewFontDialog(MainWindow gui) {
@@ -76,14 +76,14 @@ public class NewFontDialog extends JDialog implements ActionListener, ChangeList
 	private void initGUI() {
 		Container c = getContentPane();
 		c.setLayout(null);
-		
+
 		JPanel generalSettings = new JPanel(null);
 		generalSettings.setBorder(BorderFactory.createTitledBorder("General"));
 		JLabel fontNameL = new JLabel("Name:");
 		fontNameL.setLocation(6,19);
 		fontNameL.setSize(95,16);
 		generalSettings.add(fontNameL);
-		
+
 		fontNameTxt = new JTextField("new Font");
 		fontNameTxt.setLocation(75,17);
 		fontNameTxt.setSize(80,20);
@@ -225,14 +225,14 @@ public class NewFontDialog extends JDialog implements ActionListener, ChangeList
 		JButton ok = new JButton("Ok");
 		ok.setActionCommand("ok");
 		ok.addActionListener(this);
-		ok.setLocation(112, 195);
+		ok.setLocation(112, 187);
 		ok.setSize(75,25);
 		c.add(ok);
 		
 		JButton cancel = new JButton("Cancel");
 		cancel.setActionCommand("cancel");
 		cancel.addActionListener(this);
-		cancel.setLocation(193, 195);
+		cancel.setLocation(193, 187);
 		cancel.setSize(75,25);
 		c.add(cancel);
 	}
@@ -248,10 +248,10 @@ public class NewFontDialog extends JDialog implements ActionListener, ChangeList
 		super.paint(g);
 		
 		g.setColor(new Color(184,207,229));
-		g.drawRect(182,166,182,35);
+		g.drawRect(185,174,182,35);
 		
 		g.setColor(Color.WHITE);
-		g.fillRect(183,167,181,34);
+		g.fillRect(186,175,181,34);
 		
 		g.setColor(Color.BLACK);
 		if(!fontChooser.getSelectedItem().equals("None")) {
@@ -262,7 +262,7 @@ public class NewFontDialog extends JDialog implements ActionListener, ChangeList
 				if(ital.isSelected()) style |= java.awt.Font.ITALIC;
 			}
 			g.setFont(new java.awt.Font((String)fontChooser.getSelectedItem(), style, ((Integer)sizeTxt.getValue()).intValue()));
-			g.setClip(183,167,181,34);
+			g.setClip(186,175,181,34);
 			g.drawString("aA bB cC dD 1234", 185, 198);
 		}
 	}
