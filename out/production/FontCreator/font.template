@@ -23,9 +23,6 @@
  *
  */
 
-#include <inttypes.h>
-#include <avr/pgmspace.h>
-
 #ifndef %defName_H
 #define %defName_H
 

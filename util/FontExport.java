@@ -94,10 +94,9 @@ public class FontExport {
 			String fileName=destination.getName();
 			if(!(fileName.contains(".h")))
 			{
-				fileName= fileName.concat(".h");
 				b_fileRename=true;
 			}
-			//destination.getName()=destination.getName().concat(".h");
+
 			String defName = fontName.replaceAll(" ", "_").toUpperCase();
 			GregorianCalendar cal = new GregorianCalendar();
 			String date = formatNumber(""+cal.get(Calendar.DAY_OF_MONTH))+"."+
@@ -190,7 +189,7 @@ public class FontExport {
 			out.close();
 			if (b_fileRename==true)
 			{
-				File  fileRename = new File(fileName);
+				File  fileRename = new File(destination.getPath()+".h");
 				destination.renameTo(fileRename);
 			}
 		} catch(IOException e) {

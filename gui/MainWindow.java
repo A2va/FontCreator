@@ -114,7 +114,7 @@ public class MainWindow extends JFrame {
 					out.close();
 					if (b_fileRename=true)
 					{
-						File  fileRename = new File(fileName);
+						File  fileRename = new File(dest.getPath()+".font");
 						dest.renameTo(fileRename);
 					}
 				} catch (IOException e) {
