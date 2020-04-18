@@ -104,7 +104,6 @@ public class MainWindow extends JFrame {
 				boolean b_fileRename=false;
 				if(!(fileName.contains(".font")))
 				{
-					fileName= fileName.concat(".font");
 					b_fileRename=true;
 				}
 				try {
@@ -112,10 +111,11 @@ public class MainWindow extends JFrame {
 					SerializableFont font = new SerializableFont(editor.getEditedFont());
 					out.writeObject(font);
 					out.close();
-					if (b_fileRename=true)
+					if (b_fileRename==true)
 					{
 						File  fileRename = new File(dest.getPath()+".font");
 						dest.renameTo(fileRename);
+						b_fileRename=false;
 					}
 				} catch (IOException e) {
 					System.err.println("IOException: "+e.toString());

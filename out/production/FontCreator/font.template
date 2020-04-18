@@ -1,27 +1,23 @@
 
 ?headerSize=6;			needed for calculating the font size in bytes
 ?widthTable=true;
-
-/*
- *
- * %fontName
- *
- * created with FontCreator
- * written by F. Maximilian Thiele
- *
- 
- * File Name           : %fileName
- * Date                : %date
- * Font size in bytes  : %size
- * Font width          : %width
- * Font height         : %height
- * Font first char     : %firstChar
- * Font last char      : %lastChar
- * Font used chars     : %charCount
- *
- * The font data are defined as
- *
- */
+/****************************************************************************
+*  %fontName
+*
+* Created with FontCreator
+* Date      : %date
+*
+****************************************************************************/
+/****************************************************************************
+* INFORMATION
+*    File Name           : %fileName
+*    Font size in bytes  : %size
+*    Font width          : %width
+*    Font height         : %height
+*    Font first char     : %firstChar
+*    Font last char      : %lastChar
+*    Font used chars     : %charCount
+****************************************************************************/
 
 #ifndef %defName_H
 #define %defName_H

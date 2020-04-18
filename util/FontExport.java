@@ -191,6 +191,7 @@ public class FontExport {
 			{
 				File  fileRename = new File(destination.getPath()+".h");
 				destination.renameTo(fileRename);
+				b_fileRename=false;
 			}
 		} catch(IOException e) {
 			System.err.println("IOException: "+e.toString());
