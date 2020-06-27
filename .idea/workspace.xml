@@ -73,6 +73,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="415" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1587219930173" />
+    <state x="740" y="237" key="FileChooserDialogImpl" timestamp="1589891676386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="237" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589891676386" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1587220650302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -105,18 +109,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587220650302" />
+    <state x="625" y="219" key="NewModule_or_Project.wizard" timestamp="1589891686905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="625" y="219" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589891686905" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1586267890944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586267890944" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587219439387">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589895261904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587219439387" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589895261904" />
     <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1586266657149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="118" width="607" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586266657149" />
+    <state x="342" y="132" key="new project wizard" timestamp="1589895287550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="132" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589895287550" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FontCreator$FontCreator.ic" NAME="FontCreator Coverage Results" MODIFIED="1586271305525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
